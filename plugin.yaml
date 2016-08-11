@@ -1,0 +1,6 @@
+plugin:
+    name: 'lindesay.messaging::lang.plugin.name'
+    description: 'User messaging system'
+    author: 'Matt Lindesay'
+    icon: oc-icon-paper-plane
+    homepage: 'http://github.com/mattlindesay/messaging-plugin'
