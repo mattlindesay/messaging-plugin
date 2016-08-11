@@ -1,0 +1,18 @@
+fields:
+    sender_id:
+        label: Sender
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    receiver_id:
+        label: Receiver
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    message:
+        label: Message
+        span: auto
+        size: small
+        oc.commentPosition: ''
+        cssClass: col-md-12
+        type: textarea

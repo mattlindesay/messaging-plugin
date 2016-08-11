@@ -1,0 +1,10 @@
+columns:
+    sender_id:
+        label: Sender
+        type: number
+    receiver_id:
+        label: Receiver
+        type: number
+    message:
+        label: Message
+        type: text
