@@ -4,3 +4,13 @@ plugin:
     author: 'Matt Lindesay'
     icon: oc-icon-paper-plane
     homepage: 'http://github.com/mattlindesay/messaging-plugin'
+navigation:
+    main-menu-item:
+        label: 'lindesay.messaging::lang.plugin.name'
+        url: /messaging
+        icon: icon-paper-plane
+        sideMenu:
+            side-menu-item:
+                label: Messages
+                url: /messages
+                icon: icon-paper-plane-o

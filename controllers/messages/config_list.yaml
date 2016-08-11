@@ -1,0 +1,11 @@
+list: $/lindesay/messaging/models/message/columns.yaml
+modelClass: Lindesay\Messaging\Models\Message
+title: Messages
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'lindesay/messaging/messages/update/:id'
