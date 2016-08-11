@@ -1,0 +1,29 @@
+{% set messages = __SELF__.messages %}
+
+<ul class="message-list">
+    {% for message in messages %}
+        <li>
+            From {{ message.sender.username }} to {{ message.sender.receiver }}: {{ message.message }}
+        </li>
+    {% else %}
+        <li class="no-data">{{ noMessagesMessage }}</li>
+    {% endfor %}
+</ul>
+
+{% if messages.lastPage > 1 %}
+    <ul class="pagination">
+        {% if messages.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (messages.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..messages.lastPage %}
+            <li class="{{ messages.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if messages.lastPage > messages.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (messages.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}

@@ -15,14 +15,24 @@ class Message extends Model
     public $rules = [
     ];
 
+    public $fillable = ['sender_id','receiver_id','message'];
+
     /*
      * Disable timestamps by default.
      * Remove this line if timestamps are defined in the database table.
      */
-    public $timestamps = false;
+    //public $timestamps = false;
 
     /**
      * @var string The database table used by the model.
      */
     public $table = 'lindesay_messaging_messages';
+
+    /**
+     * @var array Relations
+     */
+    public $belongsTo = [
+        'sender' => ['RainLab\User\Models\User', 'table' => 'users'],
+        'receiver' => ['RainLab\User\Models\User', 'table' => 'users'],
+    ];
 }
