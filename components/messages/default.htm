@@ -1,14 +1,56 @@
 {% set messages = __SELF__.messages %}
 
-<ul class="message-list">
-    {% for message in messages %}
-        <li>
-            From {{ message.sender.username }} to {{ message.sender.receiver }}: {{ message.message }}
-        </li>
-    {% else %}
-        <li class="no-data">{{ noMessagesMessage }}</li>
-    {% endfor %}
-</ul>
+<div class="forum">
+    <div class="container rainlab-forum">
+        <div class="row">
+
+            {% for message in messages %}
+            {% if folder == 'sent' %}
+                {% set other_username = message.recipient.username %}
+                {% set other_email = message.recipient.email %}
+            {% else %}
+                {% set other_username = message.sender.username %}
+                {% set other_email = message.sender.email %}
+            {% endif %}
+
+            <div class="post-divider"></div>
+            <div class="">
+                <div class="col-panel-padding-right-md">
+                    <div class="article">
+                        <div class="forum-posts">
+                            <div class="forum-post" data-post-id="160" id="post-160">
+                                <a href="/users/{{ other_username }}" class="avatar">
+                                    {{ gravatar( other_email ) }}
+                                </a>
+                                <div class="content">
+                                    <a href="/users/{{ other_username }}" class="author">{{ other_username }}</a>
+                                    <div class="metadata">
+                                        <div class="date">
+                                            {{ message.created_at.diffForHumans() }}
+                                        </div>
+                                    </div>
+                                    <a href="/{{ 'composemessage' }}?recipient={{ other_username }}&amp;subject={{ message.encodedSubject }}">
+                                        <i class="icon-reply"></i>
+                                    </a>
+                                    <div class="text">
+                                        <p><strong>{{ message.subject }}</strong><br>
+                                        {{ message.body }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% else %}
+                <li class="no-data">{{ noMessagesMessage }}</li>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
 
 {% if messages.lastPage > 1 %}
     <ul class="pagination">

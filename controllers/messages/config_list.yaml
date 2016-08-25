@@ -1,5 +1,5 @@
-list: $/lindesay/messaging/models/message/columns.yaml
-modelClass: Lindesay\Messaging\Models\Message
+list: $/mattlindesay/messaging/models/message/columns.yaml
+modelClass: MattLindesay\Messaging\Models\Message
 title: Messages
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
@@ -8,4 +8,4 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'lindesay/messaging/messages/update/:id'
+recordUrl: 'mattlindesay/messaging/messages/update/:id'

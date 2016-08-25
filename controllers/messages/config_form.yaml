@@ -1,10 +1,10 @@
 name: Messages
-form: $/lindesay/messaging/models/message/fields.yaml
-modelClass: Lindesay\Messaging\Models\Message
-defaultRedirect: lindesay/messaging/messages
+form: $/mattlindesay/messaging/models/message/fields.yaml
+modelClass: MattLindesay\Messaging\Models\Message
+defaultRedirect: mattlindesay/messaging/messages
 create:
-    redirect: 'lindesay/messaging/messages/update/:id'
-    redirectClose: lindesay/messaging/messages
+    redirect: 'mattlindesay/messaging/messages/update/:id'
+    redirectClose: mattlindesay/messaging/messages
 update:
-    redirect: lindesay/messaging/messages
-    redirectClose: lindesay/messaging/messages
+    redirect: mattlindesay/messaging/messages
+    redirectClose: mattlindesay/messaging/messages

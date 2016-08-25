@@ -1,0 +1,49 @@
+<form
+    data-request="onSendMessage">
+    <div class="form-group">
+        <label for="composeRecipient">To</label>
+        {% if recipient != '' %}
+            <p>{{ recipient }}</p>
+            <input type="hidden" name="recipient" value="{{ recipient }}" />
+        {% else %}
+            <input
+                name="recipient"
+                type="text"
+                class="form-control"
+                id="composeRecipient"
+                autofocus
+                placeholder="Enter recipient username(s)" />
+        {% endif %}
+    </div>
+
+    <div class="form-group">
+        <label for="composeMessage">Subject</label>
+        <input
+            name="subject"
+            type="input"
+            class="form-control"
+            id="composeSubject"
+            value="{{ subject }}"
+            {% if recipient != '' %}
+            {% if subject == '' %}
+            autofocus
+            {% endif %}
+            {% endif %}
+            placeholder="Enter your subject"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="composeMessage">Message</label>
+        <textarea
+            name="message"
+            class="form-control"
+            rows="5"
+            id="composeBody"
+            {% if subject != '' %}
+            autofocus
+            {% endif %}
+            placeholder="Enter your message"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-default">Send</button>
+</form>

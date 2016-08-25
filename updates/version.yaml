@@ -1,5 +1,5 @@
 1.0.1:
     - 'Initialize plugin.'
 1.0.2:
-    - 'Created table lindesay_messaging_messages'
-    - builder_table_create_lindesay_messaging_messages.php
+    - 'Created table mattlindesay_messaging_messages'
+    - builder_table_create_mattlindesay_messaging_messages.php

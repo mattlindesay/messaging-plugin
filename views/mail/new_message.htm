@@ -1,0 +1,27 @@
+subject = "Message from @{{ sender }}: {{ subject }}"
+==
+
+Hello {{ name }},
+
+You have received a message from @{{ sender }}:
+
+---
+{{ subject }}
+{{ body }}
+---
+You can reply to this message and it will be sent to @{{ sender }}.
+Message ID: {{ uuid }}
+
+==
+
+<p>Hello {{ name }},</p>
+
+<p>You have received a message from @{{ sender }}:</p>
+
+<hr />
+<p><strong>{{ subject }}</strong></p>
+<p>{{ body }}</p>
+
+<hr />
+<p>You can reply to this message and it will be sent to @{{ sender }}.</p>
+<p>Message ID: {{ uuid }}</p>

@@ -1,4 +1,4 @@
-<?php namespace Lindesay\Messaging\Controllers;
+<?php namespace MattLindesay\Messaging\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
@@ -13,6 +13,6 @@ class Messages extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Lindesay.Messaging', 'main-menu-item', 'side-menu-item');
+        BackendMenu::setContext('MattLindesay.Messaging', 'main-menu-item', 'side-menu-item');
     }
 }
