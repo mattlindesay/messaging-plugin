@@ -1,5 +1,6 @@
 # messenger-plugin
-Messenger plugin for October CMS
+
+Messenger plugin for October CMS.
 
 ## Alpha
 
