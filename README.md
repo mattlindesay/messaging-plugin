@@ -18,6 +18,14 @@ This plugin is not ready to be used yet.
  * Rainlab.User
  * ... others
 
+Add an entry to composer.json
+
+  php-mime-mail-parser/php-mime-mail-parser": "dev-master"
+
+and update
+
+  composer update
+
 ## Plugin settings
 
 Sorry, no settings just yet. This will come later though.
