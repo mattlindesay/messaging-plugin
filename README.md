@@ -20,11 +20,11 @@ This plugin is not ready to be used yet.
 
 Add an entry to composer.json
 
-  php-mime-mail-parser/php-mime-mail-parser": "dev-master"
+    php-mime-mail-parser/php-mime-mail-parser": "dev-master"
 
 and update
 
-  composer update
+    composer update
 
 ## Plugin settings
 
