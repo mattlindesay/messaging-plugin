@@ -10,7 +10,6 @@ This plugin is not ready to be used yet.
 
  * Allows users to send messages to each other. 
  * Messages are forwarded on to the user via email with an embedded message ID. 
- * The message ID allows the user to reply back on the email, which sends the message back to the original sender. (Requires postfix configuration to send to the mailrouter command).
  * Messages can also be sent from the "Admin" account to automate notifications.
 
 ## Requirements
@@ -22,3 +21,6 @@ This plugin is not ready to be used yet.
 
 Sorry, no settings just yet. This will come later though.
 
+## Later
+
+ * The message ID allows the user to reply back on the email, which sends the message back to the original sender. (Requires postfix configuration to send to the mailrouter command).

@@ -1,7 +1,9 @@
-<?php
+<?php namespace mattlindesay\messaging\console;
 
-namespace mattlindesay\messaging\console;
+# Reference: https://www.sitepoint.com/piping-emails-laravel-application/
 
+use Log;
+use MimeMailParser\Parser;
 use Illuminate\Console\Command;
 
 class MailRouter extends Command
@@ -21,7 +23,24 @@ class MailRouter extends Command
      */
     public function fire()
     {
-        $this->output->writeln('Hello world!');
+        // read from stdin
+        $fd = fopen("php://stdin", "r");
+        $rawEmail = "";
+        while (!feof($fd)) {
+            $rawEmail .= fread($fd, 1024);
+        }
+        fclose($fd);
+
+        $parser = new Parser();
+        $parser->setText($rawEmail);
+        
+        $to = $parser->getHeader('to');
+        $from = $parser->getHeader('from');
+        $subject = $parser->getHeader('subject');
+        $text = $parser->getMessageBody('text');
+
+        Log::info('email received');
+        Log::info('subject = '.$subject);
     }
 
     /**
